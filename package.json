@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "task1": "ts-node ./task1/index.ts",
-    "task2": "ts-node ./task2/index.ts"
+    "task2": "ts-node ./task2/index.ts",
+    "task3": "ts-node ./task3/index.ts"
   },
   "keywords": [],
   "author": "",
