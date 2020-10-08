@@ -1,10 +1,13 @@
-import Course from "../common/Course";
 import { connectToDb } from "../common/connectDb";
+import Course from "../common/Course";
 
-async function getPublishedBackendCourses() {
+async function getCourses() {
   try {
-    const courses = await Course.find({ isPublished: true, tags: "backend" })
-      .sort({ name: 1 })
+    const courses = await Course.find({
+      tags: { $in: ["frontend", "backend"] },
+      isPublished: true,
+    })
+      .sort({ price: -1 })
       .select({ name: 1, author: 1, _id: 0 });
     return courses;
   } catch (error) {
@@ -15,7 +18,7 @@ async function getPublishedBackendCourses() {
 async function main() {
   try {
     await connectToDb();
-    const courses = await getPublishedBackendCourses();
+    const courses = await getCourses();
     console.log(courses);
   } catch (error) {
     console.error(error);

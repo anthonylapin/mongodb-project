@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node index.ts",
-    "task1": "ts-node ./task1/index.ts"
+    "task1": "ts-node ./task1/index.ts",
+    "task2": "ts-node ./task2/index.ts"
   },
   "keywords": [],
   "author": "",
